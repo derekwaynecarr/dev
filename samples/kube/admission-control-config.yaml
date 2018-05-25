@@ -1,0 +1,16 @@
+apiVersion: apiserver.k8s.io/v1alpha1
+kind: AdmissionConfiguration
+plugins:
+- name: "ResourceQuota"
+  configuration:
+    apiVersion: resourcequota.admission.k8s.io/v1alpha1
+    kind: Configuration
+    limitedResources:
+    - resource: pods
+      matchContains:
+      - pods
+      - requests.cpu
+    - resource: persistentvolumeclaims
+      matchContains:
+      - .storageclass.storage.k8s.io/requests.storage
+

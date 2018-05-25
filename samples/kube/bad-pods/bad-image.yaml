@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: badimage-
+spec:
+  containers:
+  - name: goproxy
+    image: derekwaynecarr/image-does-not-exist
+    command: ["derekisbad"]
