@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: storage-quota
+spec:
+  hard:
+    requests.storage: 100Gi
+    persistentvolumeclaims: 100
+    gold.storage-class.kubernetes.io/requests.storage: 50Gi
+    gold.storage-class.kubernetes.io/persistentvolumeclaims: 5
+    silver.storage-class.kubernetes.io/requests.storage: 75Gi
+    silver.storage-class.kubernetes.io/persistentvolumeclaims: 10
+    bronze.storage-class.kubernetes.io/requests.storage: 100Gi
+    bronze.storage-class.kubernetes.io/persistentvolumeclaims: 15

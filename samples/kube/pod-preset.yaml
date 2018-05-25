@@ -1,0 +1,8 @@
+kind: PodPreset
+apiVersion: settings.k8s.io/v1alpha1
+metadata:
+  name: my-preset
+spec:
+  env:
+    - name: DEREK_HERE
+      value: "6379"

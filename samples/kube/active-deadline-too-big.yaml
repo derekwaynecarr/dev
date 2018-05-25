@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: burstable
+spec:
+  activeDeadlineSeconds: 341547784951046144
+  containers:
+  - image: busybox
+    name: busybox
+    command:
+    - sleep
+    - "3600"
+    resources:
+      requests:
+        memory: 1500Mi
+        cpu: 300m
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 0
